@@ -30,8 +30,9 @@
 			</n-card>
 		</div>
 		<n-pagination @update:page="loadBlogs" v-model:page="pageInfo.page" :page-count="pageInfo.pageCount" />
-		<n-divider />
+
 		<div class="footer">
+			<n-divider />
 			<div>Powered by wfs</div>
 			<div>XICP备XXXX号-1</div>
 		</div>
@@ -112,6 +113,7 @@ const toDetail = blog => {
 
 const homePage = () => {
 	router.push('/')
+	loadBlogs()
 }
 const dashboard = () => {
 	router.push('/login')
@@ -123,7 +125,7 @@ const dashboard = () => {
 	margin-bottom: 15px;
 }
 .container {
-	width: 800px;
+	width: 50%;
 	margin: 0 auto;
 }
 .nav {
@@ -143,6 +145,7 @@ const dashboard = () => {
 	}
 }
 .footer {
+	margin: 0 auto;
 	text-align: center;
 	line-height: 25px;
 	color: #64676a;

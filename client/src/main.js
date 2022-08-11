@@ -26,5 +26,10 @@ axios.interceptors.request.use(config => {
 	config.headers.token = adminStore.token
 	return config
 })
-
+router.beforeEach((to, from, next) => {
+	if (to.meta.title) {
+		document.title = to.meta.title
+	}
+	next()
+})
 app.mount('#app')
